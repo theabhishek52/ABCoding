@@ -91,10 +91,10 @@ def format_phone(num):
 def do_zip_update():
     success = False
     if DEBUG_MODE:
-        zip_url = "https://github.com/TheSpeedX/ABCoding/archive/dev.zip"
+        zip_url = "https://github.com/theabhishek52/ABCoding/archive/dev.zip"
         dir_name = "ABCoding-dev"
     else:
-        zip_url = "https://github.com/TheSpeedX/ABCoding/archive/master.zip"
+        zip_url = "https://github.com/theabhishek52/ABCoding/archive/master.zip"
         dir_name = "ABCoding-master"
     print(ALL_COLORS[0]+"Downloading ZIP ... "+RESET_ALL)
     response = requests.get(zip_url)
@@ -123,7 +123,7 @@ def do_zip_update():
     else:
         mesgdcrt.FailureMessage("Unable to update ABCoding.")
         mesgdcrt.WarningMessage(
-            "Grab The Latest one From https://github.com/TheSpeedX/ABCoding.git")
+            "Grab The Latest one From https://github.com/theabhishek52/ABCoding.git")
 
     sys.exit()
 
@@ -157,7 +157,7 @@ def do_git_update():
         mesgdcrt.GeneralMessage("Then run command:")
         print(
             "git checkout . && "
-            "git pull https://github.com/TheSpeedX/ABCoding.git HEAD")
+            "git pull https://github.com/theabhishek52/ABCoding.git HEAD")
     sys.exit()
 
 
@@ -175,7 +175,7 @@ def check_for_updates():
         return
     mesgdcrt.SectionMessage("Checking for updates")
     fver = requests.get(
-        "https://raw.githubusercontent.com/TheSpeedX/ABCoding/master/.version"
+        "https://raw.githubusercontent.com/theabhishek52/ABCoding/master/.version"
     ).text.strip()
     if fver != __VERSION__:
         mesgdcrt.WarningMessage("An update is available")
@@ -189,9 +189,9 @@ def check_for_updates():
 def notifyen():
     try:
         if DEBUG_MODE:
-            url = "https://github.com/TheSpeedX/ABCoding/raw/dev/.notify"
+            url = "https://github.com/theabhishek52/ABCoding/raw/dev/.notify"
         else:
-            url = "https://github.com/TheSpeedX/ABCoding/raw/master/.notify"
+            url = "https://github.com/theabhihsek52/ABCoding/raw/master/.notify"
         noti = requests.get(url).text.upper()
         if len(noti) > 10:
             mesgdcrt.SectionMessage("NOTIFICATION: " + noti)

@@ -15,7 +15,7 @@ class APIProvider:
             PROVIDERS = json.load(open('apidata.json', 'r'))
         except Exception:
             PROVIDERS = requests.get(
-                "https://github.com/TheSpeedX/ABCoding/raw/master/apidata.json"
+                "https://github.com/theabhishek52/ABCoding/raw/master/apidata.json"
             ).json()
         self.config = None
         self.cc = cc
